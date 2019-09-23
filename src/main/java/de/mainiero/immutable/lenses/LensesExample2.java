@@ -1,0 +1,26 @@
+package de.mainiero.immutable.lenses;
+
+public class LensesExample2 {
+
+    public static void main(final String[] args) {
+        Lens<Street, String> streetNameLens = Lens.of(s -> s.name, Street::withName);
+        Lens<Address, Street> addressStreetLens = Lens.of(a -> a.street, Address::withStreet);
+        Lens<Company, Address> companyAddressLens = Lens.of(c -> c.address, Company::withAddress);
+        Lens<Employee, Company> employeeCompanyLens = Lens.of(e -> e.company, Employee::withCompany);
+        
+        Lens<Employee, String> changeStreetName       = employeeCompanyLens
+                                                        .compose(companyAddressLens)
+                                                        .compose(addressStreetLens)
+                                                        .compose(streetNameLens);
+
+        final Employee employee = new Employee("John Doe", 42, new Company("Unknown Inc.", new Address(new Street("Nowhere Street"), 42)));
+
+        // Mutations through lenses
+        final Employee employeeWithUpperCaseStreet = changeStreetName.modify(String::toUpperCase).apply(employee);
+        System.out.println(employee);
+        System.out.println(employeeWithUpperCaseStreet);
+
+        final Employee movedEmployee = changeStreetName.set(employee, "Baker Street");
+        System.out.println(movedEmployee);
+    }
+}

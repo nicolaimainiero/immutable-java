@@ -1,0 +1,26 @@
+@startuml
+
+class Employee {
+    + name: String
+    + age: Integer 
+    + company: Company 
+}
+class Company {
+    + name: String
+    + address: Address
+}
+
+class Address {
+    + street: Street
+    + number: Integer
+}
+
+class Street {
+    + name: String
+}
+
+Employee - Company
+Company - Address
+Address -Street
+
+@enduml

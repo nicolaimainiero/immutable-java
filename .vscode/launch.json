@@ -1,0 +1,95 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Threads",
+            "request": "launch",
+            "mainClass": "de.mainiero.Threads",
+            "projectName": "sample"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - WithoutLenses",
+            "request": "launch",
+            "mainClass": "de.mainiero.immutable.lenses.WithoutLenses",
+            "projectName": "sample"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Step3Example",
+            "request": "launch",
+            "mainClass": "de.mainiero.immutable.convert.step3.Step3Example",
+            "projectName": "sample"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - VanillaExample",
+            "request": "launch",
+            "mainClass": "de.mainiero.immutable.examples.VanillaExample",
+            "projectName": "sample"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ImmutablesExample",
+            "request": "launch",
+            "mainClass": "de.sidion.nma.immutable.ImmutablesExample",
+            "projectName": "sample"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LensesExample2",
+            "request": "launch",
+            "mainClass": "de.sidion.nma.lenses.LensesExample2",
+            "projectName": "sample"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LensesExample1",
+            "request": "launch",
+            "mainClass": "de.sidion.nma.lenses.LensesExample1",
+            "projectName": "sample"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LensesExample",
+            "request": "launch",
+            "mainClass": "de.sidion.nma.lenses.LensesExample",
+            "projectName": "sample"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - VavrExample",
+            "request": "launch",
+            "mainClass": "de.sidion.nma.immutable.VavrExample",
+            "projectName": "sample"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FJExample",
+            "request": "launch",
+            "mainClass": "de.sidion.nma.immutable.FJExample",
+            "projectName": "sample"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PExample",
+            "request": "launch",
+            "mainClass": "de.sidion.nma.immutable.PExample",
+            "projectName": "sample"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Example",
+            "request": "launch",
+            "mainClass": "de.sidion.nma.immutable.Example",
+            "projectName": "sample"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
+            "mainClass": "de.sidion.nma.immutable.App",
+            "projectName": "sample"
+        }
+    ]
+}
