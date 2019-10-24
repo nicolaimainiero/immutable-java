@@ -1,34 +1,42 @@
 package de.mainiero;
 
-import java.util.concurrent.TimeUnit;
-
 public class Threads {
 
-    public static void main(String[] args) {
-        Sample s = new Sample();
-        s.setValue(10);
-        Runnable task = () -> {
-            try {
-                TimeUnit.SECONDS.sleep(1);
-                s.setValue(100);
-            } catch (InterruptedException e) {
-                    e.printStackTrace();
-            }
-        };
-        System.out.println(s.getValue());
-        s.setValue(200);
-        task.run();
-        Thread thread = new Thread(task);
-        thread.start();
-        System.out.println(s.getValue());
+    public static void main(String[] args) throws InterruptedException {
+        Sampler sampler = new Sampler();
+
+        Thread thread1 = new Thread(new SamplerIncRunnable(sampler));
+        thread1.start();
+
+        Thread thread2 = new Thread(new SamplerIncRunnable(sampler));
+        thread2.start();
+
+        thread1.join();
+        thread2.join();
+
+        System.out.println(sampler.getValue());
         
     }
 
-    static class Sample{
-        private int value;
+    static class SamplerIncRunnable implements Runnable {
+        private Sampler sampler;
+    
+        public SamplerIncRunnable(Sampler sampler) {
+            this.sampler = sampler;
+        }
+    
+        public void run() {
+            for ( int i=0; i<1_000_000; i++ ) {
+                sampler.incrementValue();
+            }
+        }
+    }
+
+    static class Sampler {
+        private int value = 0;
         
-        public void setValue(int newValue){
-            this.value = newValue;
+        void incrementValue(){
+            this.value++;
         }
 
         public int getValue(){
