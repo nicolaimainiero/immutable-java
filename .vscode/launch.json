@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ImmutablesExample",
+            "request": "launch",
+            "mainClass": "de.mainiero.immutable.examples.ImmutablesExample",
+            "projectName": "sample"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BadHashKey",
+            "request": "launch",
+            "mainClass": "de.mainiero.immutable.examples.BadHashKey",
+            "projectName": "sample"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Threads",
             "request": "launch",
             "mainClass": "de.mainiero.Threads",
